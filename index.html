@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Gozie Creative Hub</title>
+    <title>Gozie Creative Hub | Portfolio</title>
     <style>
         * {
             box-sizing: border-box;
@@ -17,84 +17,109 @@
             line-height: 1.6;
             padding: 20px;
         }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
         header {
             text-align: center;
             padding: 20px 0;
-            border-bottom: 2px solid #334155;
-            margin-bottom: 30px;
         }
-        h1 {
+        header h1 {
             color: #38bdf8;
-            margin-bottom: 10px;
+            font-size: 2.2rem;
+            margin-bottom: 8px;
         }
-        nav a {
+        header p {
             color: #94a3b8;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: 600;
+            font-size: 1.1rem;
         }
-        nav a:hover {
-            color: #38bdf8;
-        }
-        section {
-            max-width: 800px;
-            margin: 0 auto 30px auto;
+        .card {
             background-color: #1e293b;
-            padding: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        h2 {
+        .card h2 {
             color: #38bdf8;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 5px;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
         }
-        p, ul {
-            margin-bottom: 15px;
+        img, video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 12px 0;
+            display: block;
         }
         ul {
             list-style-type: square;
             padding-left: 20px;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 15px;
-            border: 1px solid #334155;
+        li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Header -->
-    <header>
-        <h1>Gozie Creative Hub</h1>
-        <nav>
-            <a href="index.html">Home</a> | 
-            <a href="about.html">About Me</a>
-        </nav>
-    </header>
-
-    <!-- About Section -->
-    <section>
-        <h2>About Me</h2>
-        <p>Welcome! I am a graphic designer, video editor, content creator, and entrepreneur.</p>
-        <p>I specialize in visual branding, digital content creation, and creative marketing solutions designed to elevate businesses and brand identity.</p>
-    </section>
-
-    <!-- Entrepreneurship & Certificates Section -->
-    <section>
-        <h2>Entrepreneurship & Certifications</h2>
-        <p>Highlights of my professional training and business journey:</p>
-        <ul>
-            <li><strong>Entrepreneurship Program Certificate</strong> — Specialized program in business strategy, growth, and digital innovation.</li>
-        </ul>
+    <div class="container">
         
-        <!-- Certificate Image Placeholder -->
-        <p><strong>Certificate Preview:</strong></p>
-        <img src="certificate.jpg" alt="Entrepreneurship Certificate">
-    </section>
+        <!-- Header Section -->
+        <header>
+            <h1>Gozie Creative Hub</h1>
+            <p>Graphic Designer | Video Editor | Content Creator | Entrepreneur</p>
+        </header>
+
+        <!-- Main Banner Image -->
+        <div class="card">
+            <img src="gozoeCreative Hub" alt="Gozie Creative Hub Header">
+        </div>
+
+        <!-- About Me Section -->
+        <div class="card">
+            <h2>About Me</h2>
+            <img src="digital-agency.webp" alt="Digital Agency">
+            <p>Welcome! I am a graphic designer, video editor, content creator, and entrepreneur.</p>
+            <p>I specialize in visual branding, digital content creation, and creative marketing solutions designed to elevate businesses and brand identity.</p>
+        </div>
+
+        <!-- Portfolio & Images Section -->
+        <div class="card">
+            <h2>Featured Work & Designs</h2>
+            <img src="file_00000000eaf0" alt="Creative Project">
+            <img src="Screenshot_20260" alt="Design Screenshot">
+        </div>
+
+        <!-- Video Portfolio Section -->
+        <div class="card">
+            <h2>Video Projects</h2>
+            <video controls>
+                <source src="lv_0_20260404213" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="lv_0_20260608121" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="lv_0_20260619065" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Entrepreneurship & Certifications -->
+        <div class="card">
+            <h2>Entrepreneurship & Certifications</h2>
+            <p>Highlights of my professional training and business journey:</p>
+            <ul>
+                <li><strong>Entrepreneurship Program Certificate</strong> — Specialized program in business strategy, growth, and brand development.</li>
+            </ul>
+        </div>
+
+    </div>
 
 </body>
 </html>
