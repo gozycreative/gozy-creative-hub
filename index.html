@@ -1,166 +1,709 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gozie Creative Hub | Portfolio</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #0b0f19;
-            color: #e2e8f0;
-            line-height: 1.6;
-            padding: 20px 15px;
-        }
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        header {
-            text-align: center;
-            padding: 30px 10px;
-        }
-        header h1 {
-            color: #38bdf8;
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 6px;
-        }
-        header p {
-            color: #94a3b8;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        .banner {
-            width: 100%;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-            display: block;
-        }
-        .card {
-            background-color: #161e2e;
-            border: 1px solid #243044;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-        .card h2 {
-            color: #38bdf8;
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #243044;
-        }
-        .card p {
-            color: #cbd5e1;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-        }
-        .media-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-top: 15px;
-        }
-        .media-item {
-            width: 100%;
-            border-radius: 10px;
-            border: 1px solid #243044;
-            overflow: hidden;
-            background: #0f172a;
-        }
-        img, video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        ul {
-            padding-left: 20px;
-            color: #cbd5e1;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gozycreative — Professional Video Editing, Graphic Design, Content Creation and Creative Services.">
+<title>Gozycreative | Creative Portfolio</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#0b0b0d;
+color:#f5f5f5;
+line-height:1.7;
+}
+:root{
+--gold:#d6a52e;
+--gold2:#f0c75e;
+--dark:#0b0b0d;
+--card:#151519;
+--white:#fff;
+--muted:#b9b9bf;
+}
+a{text-decoration:none;color:inherit}
+.container{width:92%;max-width:1150px;margin:auto}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(11,11,13,.96);
+border-bottom:1px solid #29292d;
+backdrop-filter:blur(10px);
+}
+.nav{
+min-height:75px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+.logo{
+font-size:25px;
+font-weight:900;
+letter-spacing:1px;
+}
+.logo span{color:var(--gold)}
+nav ul{
+display:flex;
+list-style:none;
+gap:22px;
+}
+nav a{
+font-size:14px;
+font-weight:700;
+color:#ddd;
+}
+nav a:hover{color:var(--gold)}
+
+.hero{
+min-height:88vh;
+display:flex;
+align-items:center;
+padding:80px 0;
+background:
+radial-gradient(circle at 80% 30%,rgba(214,165,46,.16),transparent 35%),
+linear-gradient(135deg,#0b0b0d,#151518);
+}
+.hero-grid{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+align-items:center;
+gap:60px;
+}
+.badge{
+display:inline-block;
+border:1px solid var(--gold);
+color:var(--gold2);
+padding:7px 14px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+margin-bottom:22px;
+}
+h1{
+font-size:clamp(45px,7vw,82px);
+line-height:1;
+margin-bottom:25px;
+}
+h1 span{color:var(--gold)}
+.hero h2{
+font-size:22px;
+margin-bottom:20px;
+color:#ddd;
+}
+.hero p{
+max-width:650px;
+color:var(--muted);
+font-size:17px;
+}
+.buttons{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+.btn{
+display:inline-block;
+padding:13px 22px;
+border-radius:8px;
+font-weight:bold;
+border:1px solid var(--gold);
+}
+.btn-primary{
+background:var(--gold);
+color:#111;
+}
+.btn-outline{color:white}
+.btn:hover{transform:translateY(-2px)}
+
+.hero-card{
+border:1px solid #38383d;
+background:linear-gradient(145deg,#1b1b20,#101014);
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+.profile{
+width:190px;
+height:190px;
+border-radius:50%;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:60px;
+font-weight:900;
+color:#111;
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+border:5px solid #fff;
+}
+.hero-card h3{margin-top:20px;font-size:25px}
+.hero-card p{font-size:14px;margin-top:8px}
+
+section{padding:90px 0}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title small{
+color:var(--gold);
+font-weight:bold;
+letter-spacing:2px;
+}
+.section-title h2{
+font-size:42px;
+margin-top:8px;
+}
+.section-title p{
+max-width:650px;
+margin:10px auto;
+color:var(--muted);
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:45px;
+}
+.card{
+background:var(--card);
+border:1px solid #29292f;
+border-radius:16px;
+padding:30px;
+}
+.card h3{color:var(--gold2);margin-bottom:12px}
+.card p{color:var(--muted)}
+.list{
+list-style:none;
+margin-top:20px;
+}
+.list li{
+padding:9px 0;
+border-bottom:1px solid #29292f;
+}
+.list li::before{
+content:"✓";
+color:var(--gold);
+font-weight:bold;
+margin-right:10px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+.service{
+background:var(--card);
+padding:30px;
+border:1px solid #29292f;
+border-radius:16px;
+transition:.3s;
+}
+.service:hover{
+transform:translateY(-6px);
+border-color:var(--gold);
+}
+.icon{
+font-size:34px;
+margin-bottom:15px;
+}
+.service h3{margin-bottom:10px}
+.service p{color:var(--muted);font-size:14px}
+
+.portfolio{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+.project{
+min-height:230px;
+border:1px solid #303036;
+border-radius:16px;
+background:linear-gradient(145deg,#1b1b20,#101014);
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:25px;
+transition:.3s;
+}
+.project:hover{
+border-color:var(--gold);
+transform:translateY(-5px);
+}
+.project h3{color:var(--gold2);margin-bottom:8px}
+.project p{color:var(--muted);font-size:13px}
+
+.timeline{
+max-width:850px;
+margin:auto;
+}
+.job{
+border-left:3px solid var(--gold);
+padding:0 0 35px 30px;
+margin-bottom:20px;
+position:relative;
+}
+.job:before{
+content:"";
+position:absolute;
+left:-9px;
+top:0;
+width:14px;
+height:14px;
+background:var(--gold);
+border-radius:50%;
+}
+.job h3{font-size:21px}
+.job .company{color:var(--gold2);font-weight:bold}
+.job p{color:var(--muted);margin-top:8px}
+.job ul{padding-left:20px;color:var(--muted)}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+max-width:850px;
+margin:auto;
+}
+.skill{
+background:var(--card);
+border:1px solid #29292f;
+padding:18px 20px;
+border-radius:10px;
+}
+.skill span{color:var(--gold2);font-weight:bold}
+
+.certificate{
+max-width:750px;
+margin:auto;
+text-align:center;
+padding:50px 30px;
+border:1px dashed var(--gold);
+border-radius:18px;
+background:#151519;
+}
+.certificate .cert-icon{font-size:55px}
+.certificate h3{font-size:25px;margin:15px 0}
+.certificate p{color:var(--muted)}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+.contact-item{
+display:flex;
+gap:15px;
+align-items:flex-start;
+background:var(--card);
+padding:22px;
+border-radius:12px;
+border:1px solid #29292f;
+}
+.contact-item strong{display:block;color:var(--gold2)}
+.contact-item span{color:var(--muted);font-size:14px}
+
+footer{
+padding:35px 0;
+border-top:1px solid #29292f;
+text-align:center;
+color:var(--muted);
+}
+footer strong{color:var(--gold2)}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+z-index:999;
+background:#25D366;
+color:white;
+padding:13px 18px;
+border-radius:30px;
+font-weight:bold;
+box-shadow:0 8px 25px rgba(0,0,0,.4);
+}
+
+@media(max-width:800px){
+nav ul{
+gap:12px;
+overflow-x:auto;
+max-width:65vw;
+}
+nav a{font-size:12px}
+.hero-grid,
+.about-grid,
+.contact-grid{
+grid-template-columns:1fr;
+}
+.services,
+.portfolio{
+grid-template-columns:1fr 1fr;
+}
+.hero{padding:65px 0}
+section{padding:65px 0}
+}
+
+@media(max-width:520px){
+.nav{min-height:65px}
+.logo{font-size:20px}
+nav ul{display:none}
+h1{font-size:48px}
+.hero h2{font-size:18px}
+.hero p{font-size:15px}
+.services,
+.portfolio,
+.skills{
+grid-template-columns:1fr;
+}
+.section-title h2{font-size:32px}
+.hero-card{padding:25px}
+.profile{width:150px;height:150px;font-size:45px}
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        
-        <!-- Brand Header -->
-        <header>
-            <h1>Gozie Creative Hub</h1>
-            <p>Design • Video • Content • Strategy</p>
-        </header>
+<header>
+<div class="container nav">
+<a href="#home" class="logo">Gozy<span>creative</span></a>
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-        <!-- Main Brand Image -->
-        <img class="banner" src="gozoeCreative Hub.png" alt="Gozie Creative Hub" onerror="this.style.display='none'">
+<main>
 
-        <!-- About Section -->
-        <div class="card">
-            <h2>About</h2>
-            <p>Welcome! I am a professional graphic designer, video editor, content creator, and entrepreneur.</p>
-            <p>I specialize in visual branding, digital content creation, and creative marketing solutions designed to elevate businesses and brand identity.</p>
-            
-            <div class="media-item" style="margin-top: 15px;">
-                <img src="digital-agency.webp" alt="Agency Showcase" onerror="this.style.display='none'">
-            </div>
-        </div>
+<section id="home" class="hero">
+<div class="container hero-grid">
 
-        <!-- Featured Designs -->
-        <div class="card">
-            <h2>Featured Work & Designs</h2>
-            <div class="media-grid">
-                <div class="media-item">
-                    <img src="file_00000000eaf0.png" alt="Creative Project" onerror="this.style.display='none'">
-                </div>
-                <div class="media-item">
-                    <img src="Screenshot_20260.png" alt="Design Portfolio" onerror="this.style.display='none'">
-                </div>
-            </div>
-        </div>
+<div>
+<div class="badge">CREATIVE PROFESSIONAL</div>
+<h1>Welcome to <span>Gozycreative</span></h1>
+<h2>Video Editor • Graphic Designer • Artisan</h2>
+<p>
+I transform ideas into compelling visual stories through video editing,
+graphic design, content creation and creative craftsmanship.
+</p>
 
-        <!-- Video Portfolio -->
-        <div class="card">
-            <h2>Video Highlights</h2>
-            <div class="media-grid">
-                <div class="media-item">
-                    <video controls playsinline preload="metadata">
-                        <source src="lv_0_20260404213.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="media-item">
-                    <video controls playsinline preload="metadata">
-                        <source src="lv_0_20260608121.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="media-item">
-                    <video controls playsinline preload="metadata">
-                        <source src="lv_0_20260619065.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
+<div class="buttons">
+<a class="btn btn-primary" href="#portfolio">View My Work</a>
+<a class="btn btn-outline" href="#contact">Contact Me</a>
+</div>
+</div>
 
-        <!-- Certifications -->
-        <div class="card">
-            <h2>Entrepreneurship & Experience</h2>
-            <ul>
-                <li><strong>Entrepreneurship Program Certificate</strong> — Business strategy, growth, and brand development.</li>
-            </ul>
-        </div>
+<div class="hero-card">
+<div class="profile">GC</div>
+<h3>Gozycreative</h3>
+<p>Creative Services & Professional Portfolio</p>
+</div>
 
-    </div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="section-title">
+<small>ABOUT ME</small>
+<h2>Creative. Reliable. Professional.</h2>
+<p>My professional profile and the values behind my work.</p>
+</div>
+
+<div class="about-grid">
+<div class="card">
+<h3>Professional Profile</h3>
+<p>
+Creative and results-oriented professional with practical experience
+in video editing, graphic design, content creation and artisan work.
+Skilled at transforming ideas into compelling visual stories through
+creativity, technical expertise and attention to detail.
+</p>
+</div>
+
+<div class="card">
+<h3>My Strengths</h3>
+<ul class="list">
+<li>Visual storytelling</li>
+<li>Creative thinking</li>
+<li>Attention to detail</li>
+<li>Problem solving</li>
+<li>Communication skills</li>
+<li>Time management</li>
+<li>Team collaboration</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<div class="section-title">
+<small>WHAT I DO</small>
+<h2>My Services</h2>
+<p>Professional creative services for individuals, businesses, organisations and events.</p>
+</div>
+
+<div class="services">
+<div class="service">
+<div class="icon">🎬</div>
+<h3>Video Editing</h3>
+<p>Professional editing for social media, events, churches, organisations and promotional campaigns.</p>
+</div>
+
+<div class="service">
+<div class="icon">🎨</div>
+<h3>Graphic Design</h3>
+<p>Flyers, posters, banners, brochures, business cards, logos and social media graphics.</p>
+</div>
+
+<div class="service">
+<div class="icon">✦</div>
+<h3>Content Creation</h3>
+<p>Creative digital content designed to communicate ideas clearly and engage audiences.</p>
+</div>
+
+<div class="service">
+<div class="icon">📷</div>
+<h3>Photography</h3>
+<p>Creative photography and visual content for personal, business and event projects.</p>
+</div>
+
+<div class="service">
+<div class="icon">🛠</div>
+<h3>Artisan Services</h3>
+<p>Quality workmanship with professionalism, reliability and attention to detail.</p>
+</div>
+
+<div class="service">
+<div class="icon">✍</div>
+<h3>Brand Visuals</h3>
+<p>Creative visual materials that help businesses and organisations communicate their identity.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="portfolio">
+<div class="container">
+<div class="section-title">
+<small>MY WORK</small>
+<h2>Portfolio</h2>
+<p>Your real creative work can be added to these categories as the portfolio grows.</p>
+</div>
+
+<div class="portfolio">
+<div class="project">
+<div>
+<h3>Graphic Designs</h3>
+<p>Add your flyers, posters and social media designs here.</p>
+</div>
+</div>
+
+<div class="project">
+<div>
+<h3>Video Editing</h3>
+<p>Add your edited videos and promotional projects here.</p>
+</div>
+</div>
+
+<div class="project">
+<div>
+<h3>Branding</h3>
+<p>Add logos, brand materials and identity projects here.</p>
+</div>
+</div>
+
+<div class="project">
+<div>
+<h3>Photography</h3>
+<p>Add your photography work here.</p>
+</div>
+</div>
+
+<div class="project">
+<div>
+<h3>Posters & Flyers</h3>
+<p>Showcase your best event and promotional designs.</p>
+</div>
+</div>
+
+<div class="project">
+<div>
+<h3>Creative Projects</h3>
+<p>More of your professional creative work can be displayed here.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="certificates">
+<div class="container">
+<div class="section-title">
+<small>ACHIEVEMENTS</small>
+<h2>Certificates</h2>
+<p>A dedicated space for professional and entrepreneurship certificates.</p>
+</div>
+
+<div class="certificate">
+<div class="cert-icon">🏆</div>
+<h3>Entrepreneurship Certificate</h3>
+<p>
+Certificate gallery ready for your real certificate image or document.
+Additional certificates can be added here in the future.
+</p>
+</div>
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+<div class="section-title">
+<small>MY JOURNEY</small>
+<h2>Professional Experience</h2>
+</div>
+
+<div class="timeline">
+
+<div class="job">
+<h3>Video Editor</h3>
+<div class="company">Gozy Creative Hub</div>
+<p>Professional video editing and post-production.</p>
+<ul>
+<li>Edit videos for social media, organisations, churches, events and campaigns.</li>
+<li>Apply colour correction, audio enhancement, transitions, subtitles and visual effects.</li>
+<li>Organise raw footage and deliver quality projects within agreed deadlines.</li>
+</ul>
+</div>
+
+<div class="job">
+<h3>Graphic Designer</h3>
+<div class="company">Gozy Creative Hub</div>
+<p>Professional graphic design and visual communication.</p>
+<ul>
+<li>Design flyers, posters, banners, brochures, business cards and logos.</li>
+<li>Develop creative concepts that communicate clients' messages.</li>
+<li>Produce artwork for print and digital media.</li>
+</ul>
+</div>
+
+<div class="job">
+<h3>Artisan</h3>
+<div class="company">Gozy Creative Hub</div>
+<p>Quality workmanship and professional service delivery.</p>
+<ul>
+<li>Interpret project specifications accurately.</li>
+<li>Maintain tools and equipment for safe and effective operations.</li>
+<li>Build positive client relationships through reliability and professionalism.</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+<div class="section-title">
+<small>EXPERTISE</small>
+<h2>Core Skills</h2>
+<p>Professional skills reflected in my creative and technical work.</p>
+</div>
+
+<div class="skills">
+<div class="skill">✓ <span>Video Editing</span></div>
+<div class="skill">✓ <span>Graphic Design</span></div>
+<div class="skill">✓ <span>Motion Graphics</span></div>
+<div class="skill">✓ <span>Visual Storytelling</span></div>
+<div class="skill">✓ <span>Digital Content Creation</span></div>
+<div class="skill">✓ <span>Social Media Design</span></div>
+<div class="skill">✓ <span>Brand Identity Design</span></div>
+<div class="skill">✓ <span>Photo Editing</span></div>
+<div class="skill">✓ <span>Creative Thinking</span></div>
+<div class="skill">✓ <span>Communication Skills</span></div>
+<div class="skill">✓ <span>Time Management</span></div>
+<div class="skill">✓ <span>Team Collaboration</span></div>
+<div class="skill">✓ <span>Attention to Detail</span></div>
+<div class="skill">✓ <span>Problem Solving</span></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="section-title">
+<small>GET IN TOUCH</small>
+<h2>Contact Gozycreative</h2>
+<p>Let's discuss your next creative project.</p>
+</div>
+
+<div class="contact-grid">
+
+<a class="contact-item" href="tel:+2349017081620">
+<div>📞</div>
+<div>
+<strong>Phone</strong>
+<span>0901 708 1620<br>0916 261 4045</span>
+</div>
+</a>
+
+<a class="contact-item" href="mailto:alekechigozie@email.com">
+<div>✉</div>
+<div>
+<strong>Email</strong>
+<span>alekechigozie@email.com</span>
+</div>
+</a>
+
+<div class="contact-item">
+<div>📍</div>
+<div>
+<strong>Location</strong>
+<span>Abuja, Nigeria</span>
+</div>
+</div>
+
+<a class="contact-item" href="https://wa.me/2349017081620">
+<div>💬</div>
+<div>
+<strong>WhatsApp</strong>
+<span>Chat with Gozycreative</span>
+</div>
+</a>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<a class="whatsapp" href="https://wa.me/2349017081620">WhatsApp</a>
+
+<footer>
+<div class="container">
+<p>© <span id="year"></span> <strong>Gozycreative</strong>. All rights reserved.</p>
+<p>Creative Services • Video Editing • Graphic Design • Content Creation</p>
+</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
