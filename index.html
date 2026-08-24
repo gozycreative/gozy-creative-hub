@@ -10,7 +10,6 @@
 <style>
   :root{
     --ink:#0b0907;
-    --ink-soft:#161310;
     --paper:#ffffff;
     --paper-dim:#f8f6f0;
     --brass:#e5a93c;
@@ -70,7 +69,6 @@
     background:rgba(11,9,7,0.96);
     backdrop-filter:blur(12px);
     border-bottom:1px solid var(--line-dark);
-    transition:transform .3s ease;
   }
   .nav-inner{
     max-width:var(--max); margin:0 auto; padding:18px 32px;
@@ -86,20 +84,17 @@
     text-decoration:none;
   }
   .brand .dot{width:8px;height:8px;background:var(--brass);border-radius:50%;}
-  nav.links{display:flex; gap:34px; list-style:none; margin:0; padding:0;}
+  nav.links{display:flex; gap:24px; list-style:none; margin:0; padding:0;}
   nav.links a{
     font-family:'IBM Plex Mono',monospace;
-    font-size:13px;
+    font-size:12px;
     letter-spacing:0.08em;
     text-transform:uppercase;
     color:#ffffff !important;
-    opacity:0.9;
     text-decoration:none;
-    position:relative;
-    padding-bottom:3px;
     transition:all .25s ease;
   }
-  nav.links a:hover{opacity:1; color:var(--brass) !important;}
+  nav.links a:hover{color:var(--brass) !important;}
   
   .nav-cta{
     font-family:'IBM Plex Mono',monospace;
@@ -112,10 +107,8 @@
     padding:10px 20px;
     text-decoration:none;
     border:1px solid var(--brass);
-    transition:all .25s ease;
   }
-  .nav-cta:hover{background:transparent; color:var(--brass) !important;}
-  .burger{display:none; flex-direction:column; gap:5px; background:transparent; border:1px solid rgba(255,255,255,.3); cursor:pointer; padding:10px; width:46px; height:42px; align-items:center; justify-content:center; border-radius:2px;}
+  .burger{display:none; flex-direction:column; gap:5px; background:transparent; border:1px solid rgba(255,255,255,.3); cursor:pointer; padding:10px; width:46px; height:42px; align-items:center; justify-content:center;}
   .burger span{width:22px; height:2px; background:#ffffff;}
 
   /* ---------- Hero ---------- */
@@ -154,7 +147,6 @@
     margin-top:26px;
     font-family:'IBM Plex Mono',monospace;
     font-size:15px;
-    letter-spacing:0.02em;
     color:#ffffff !important;
     display:flex; flex-wrap:wrap; gap:10px 0;
   }
@@ -180,12 +172,9 @@
     padding:15px 26px;
     border:1px solid var(--brass);
     display:inline-flex; align-items:center; gap:10px;
-    transition:all .25s ease;
   }
   .btn-solid{background:var(--brass); color:var(--ink) !important;}
-  .btn-solid:hover{background:transparent; color:var(--brass) !important;}
   .btn-ghost{color:#ffffff !important; border-color:var(--line-dark);}
-  .btn-ghost:hover{border-color:var(--brass); color:var(--brass) !important;}
 
   .hero-frame{ position:relative; }
   .frame-box{
@@ -220,164 +209,81 @@
     gap:40px; margin-bottom:56px; flex-wrap:wrap;
   }
   .section-head h2{font-size:clamp(30px,3.6vw,44px); color:var(--ink);}
-  .section-note{
-    max-width:360px; font-size:15px; color:var(--slate); line-height:1.65;
-  }
+  .section-note{max-width:360px; font-size:15px; color:var(--slate); line-height:1.65;}
 
-  .reveal{opacity:1; transform:translateY(0); transition:opacity .7s ease, transform .7s ease;}
-  .js-reveal-ready .reveal{opacity:0; transform:translateY(22px);}
-  .js-reveal-ready .reveal.in{opacity:1; transform:translateY(0);}
+  /* Force elements visible */
+  .reveal{opacity:1 !important; transform:none !important;}
 
   /* ---------- About ---------- */
   .about{background:var(--paper);}
-  .about-grid{
-    display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:start;
-  }
-  .about-photo{
-    position:relative; border:1px solid var(--line); padding:12px;
-  }
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:start;}
+  .about-photo{position:relative; border:1px solid var(--line); padding:12px;}
   .about-photo img{width:100%; height:auto;}
-  .about-copy p{
-    font-size:17px; line-height:1.85; color:var(--charcoal); margin:0 0 22px;
-  }
-  .about-copy p:last-child{margin-bottom:0;}
-  .about-stats{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
-    margin-top:40px; padding-top:32px; border-top:1px solid var(--line);
-  }
-  .stat b{
-    display:block; font-family:'Fraunces',serif; font-size:32px; color:var(--brass-deep); font-weight:700;
-  }
-  .stat span{
-    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em;
-    text-transform:uppercase; color:var(--slate);
-  }
+  .about-copy p{font-size:17px; line-height:1.85; color:var(--charcoal); margin:0 0 22px;}
+  .about-stats{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px; padding-top:32px; border-top:1px solid var(--line);}
+  .stat b{display:block; font-family:'Fraunces',serif; font-size:32px; color:var(--brass-deep); font-weight:700;}
+  .stat span{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--slate);}
 
   /* ---------- Experience ---------- */
   .experience{background:var(--ink); color:#ffffff;}
-  .experience .eyebrow{color:var(--brass);}
   .experience .section-head h2{color:#ffffff !important;}
   .experience .section-note{color:rgba(255,255,255,0.7) !important;}
   .roles{display:flex; flex-direction:column;}
-  .role-card{
-    display:grid; grid-template-columns:260px 1fr; gap:40px;
-    padding:38px 0; border-top:1px solid var(--line-dark);
-  }
-  .roles .role-card:last-child{border-bottom:1px solid var(--line-dark);}
-  .role-head h3{font-size:25px; color:#ffffff !important; font-weight:600;}
-  .role-head .role-org{
-    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--brass);
-    margin-top:10px; letter-spacing:0.03em;
-  }
+  .role-card{display:grid; grid-template-columns:260px 1fr; gap:40px; padding:38px 0; border-top:1px solid var(--line-dark);}
+  .role-card:last-child{border-bottom:1px solid var(--line-dark);}
+  .role-head h3{font-size:25px; color:#ffffff !important;}
+  .role-head .role-org{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--brass); margin-top:10px;}
   .role-list{list-style:none; margin:0; padding:0; display:grid; gap:13px;}
-  .role-list li{
-    position:relative; padding-left:22px; font-size:15.5px; line-height:1.65;
-    color:rgba(255,255,255,0.85) !important;
-  }
-  .role-list li::before{
-    content:"—"; position:absolute; left:0; color:var(--brass);
-  }
+  .role-list li{position:relative; padding-left:22px; font-size:15.5px; line-height:1.65; color:rgba(255,255,255,0.85) !important;}
+  .role-list li::before{content:"—"; position:absolute; left:0; color:var(--brass);}
 
   /* ---------- Skills ---------- */
   .skills{background:var(--paper-dim);}
   .skills-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:70px;}
   .tool-list{display:flex; flex-wrap:wrap; gap:12px;}
-  .tool-list .tag, .interests .tag{
-    font-family:'IBM Plex Mono',monospace; font-size:13px;
-    padding:11px 18px; background:var(--paper); border:1px solid var(--line);
-    color:var(--charcoal);
-  }
-  .comp-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:12px 26px;
-  }
-  .comp-grid div{
-    font-size:14.5px; padding:11px 0; border-bottom:1px solid var(--line);
-    color:var(--charcoal); display:flex; align-items:center; gap:10px;
-  }
-  .comp-grid div::before{
-    content:""; width:6px; height:6px; background:var(--brass); flex:none;
-  }
-  .skill-col-title{
-    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em;
-    text-transform:uppercase; color:var(--brass-deep); margin-bottom:20px; display:block; font-weight:600;
-  }
+  .tool-list .tag{font-family:'IBM Plex Mono',monospace; font-size:13px; padding:11px 18px; background:var(--paper); border:1px solid var(--line); color:var(--charcoal);}
+  .comp-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px 26px;}
+  .comp-grid div{font-size:14.5px; padding:11px 0; border-bottom:1px solid var(--line); color:var(--charcoal); display:flex; align-items:center; gap:10px;}
+  .comp-grid div::before{content:""; width:6px; height:6px; background:var(--brass);}
+  .skill-col-title{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--brass-deep); margin-bottom:20px; display:block; font-weight:600;}
 
   /* ---------- Certificate ---------- */
   .cert{background:var(--paper);}
-  .cert-card{
-    display:grid; grid-template-columns:0.85fr 1.15fr; gap:0;
-    border:1px solid var(--line); overflow:hidden;
-  }
-  .cert-card img{width:100%; height:100%; object-fit:cover; object-position:center 30%; min-height:320px;}
+  .cert-card{display:grid; grid-template-columns:0.85fr 1.15fr; gap:0; border:1px solid var(--line); overflow:hidden;}
+  .cert-card img{width:100%; height:100%; object-fit:cover; min-height:320px;}
   .cert-copy{padding:48px; background:var(--ink); color:#ffffff; display:flex; flex-direction:column; justify-content:center;}
-  .cert-copy .eyebrow{color:var(--brass);}
   .cert-copy h3{font-size:27px; color:#ffffff !important; margin-bottom:14px;}
   .cert-copy p{font-size:15.5px; line-height:1.7; color:rgba(255,255,255,0.8) !important; margin:0 0 20px;}
-  .cert-meta{
-    display:flex; gap:28px; font-family:'IBM Plex Mono',monospace; font-size:12px;
-    color:var(--brass); text-transform:uppercase; letter-spacing:0.05em; font-weight:600;
-  }
+  .cert-meta{display:flex; gap:28px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--brass); text-transform:uppercase;}
 
   /* ---------- Projects ---------- */
   .projects{background:var(--paper-dim);}
-  .proj-grid{
-    display:grid; grid-template-columns:repeat(2,1fr); gap:28px;
-  }
-  .proj-card{
-    background:var(--paper); border:1px solid var(--line); overflow:hidden;
-    display:flex; flex-direction:column;
-  }
+  .proj-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:28px;}
+  .proj-card{background:var(--paper); border:1px solid var(--line); overflow:hidden; display:flex; flex-direction:column;}
   .proj-media{position:relative; overflow:hidden; aspect-ratio:4/3;}
-  .proj-media img{
-    width:100%; height:100%; object-fit:cover;
-    transition:transform .6s ease;
-  }
-  .proj-card:hover .proj-media img{transform:scale(1.05);}
-  .proj-body{padding:26px 26px 28px;}
-  .proj-tag{
-    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em;
-    text-transform:uppercase; color:var(--brass-deep); margin-bottom:10px; display:block; font-weight:600;
-  }
+  .proj-media img{width:100%; height:100%; object-fit:cover;}
+  .proj-body{padding:26px;}
+  .proj-tag{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--brass-deep); margin-bottom:10px; display:block; font-weight:600;}
   .proj-body h3{font-size:21px; color:var(--ink); margin-bottom:10px;}
   .proj-body p{font-size:14.5px; line-height:1.65; color:var(--slate); margin:0;}
 
   /* ---------- Contact ---------- */
-  .contact{background:var(--ink); color:#ffffff; position:relative; overflow:hidden;}
-  .contact-grid{
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:70px; position:relative; z-index:2;
-  }
-  .contact h2{font-size:clamp(32px,4vw,50px); color:#ffffff !important; max-width:520px; line-height:1.08;}
-  .contact-desc{margin-top:22px; color:rgba(255,255,255,0.8) !important; font-size:16px; line-height:1.75; max-width:460px;}
+  .contact{background:var(--ink); color:#ffffff;}
+  .contact-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:70px;}
+  .contact h2{font-size:clamp(32px,4vw,50px); color:#ffffff !important;}
+  .contact-desc{margin-top:22px; color:rgba(255,255,255,0.8) !important; font-size:16px; line-height:1.75;}
   .contact-actions{margin-top:36px; display:flex; gap:16px; flex-wrap:wrap;}
-  .contact-list{list-style:none; margin:0; padding:0; display:grid; gap:0;}
-  .contact-list li{
-    border-top:1px solid var(--line-dark); padding:22px 0;
-    display:flex; justify-content:space-between; align-items:center; gap:20px;
-  }
+  .contact-list{list-style:none; margin:0; padding:0;}
+  .contact-list li{border-top:1px solid var(--line-dark); padding:22px 0; display:flex; justify-content:space-between; align-items:center;}
   .contact-list li:last-child{border-bottom:1px solid var(--line-dark);}
-  .contact-list .label{
-    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em;
-    text-transform:uppercase; color:var(--brass); font-weight:600;
-  }
+  .contact-list .label{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--brass); font-weight:600;}
   .contact-list .val{font-size:15.5px; color:#ffffff !important; text-decoration:none;}
-  .contact-list .val:hover{color:var(--brass) !important;}
 
   /* ---------- Footer ---------- */
-  footer{
-    background:var(--ink); border-top:1px solid var(--line-dark);
-    padding:34px 0; color:rgba(255,255,255,0.6);
-  }
-  .foot-inner{
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
-  }
-  .foot-inner .brand{font-size:15px; color:#ffffff !important;}
+  footer{background:var(--ink); border-top:1px solid var(--line-dark); padding:34px 0; color:rgba(255,255,255,0.6);}
+  .foot-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
   .foot-links{display:flex; gap:26px; list-style:none; margin:0; padding:0;}
-  .foot-links a{
-    font-family:'IBM Plex Mono',monospace; font-size:12px; text-decoration:none;
-    color:rgba(255,255,255,0.7) !important; letter-spacing:0.04em;
-  }
-  .foot-links a:hover{color:var(--brass) !important;}
-  .foot-note{font-family:'IBM Plex Mono',monospace; font-size:11.5px;}
+  .foot-links a{font-family:'IBM Plex Mono',monospace; font-size:12px; text-decoration:none; color:rgba(255,255,255,0.7) !important;}
 
   /* ---------- Mobile Menu ---------- */
   .mobile-menu{
@@ -385,38 +291,24 @@
     background:rgba(11,9,7,0.98); z-index:200;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     gap:12px; padding:90px 24px 40px;
-    transform:translateY(-110%); visibility:hidden; opacity:0;
+    transform:translateY(-110%); opacity:0;
     transition:all .35s ease;
   }
-  .mobile-menu.open{ transform:translateY(0); visibility:visible; opacity:1; }
+  .mobile-menu.open{ transform:translateY(0); opacity:1; }
   .mobile-menu a{
     width:min(360px,100%); font-family:'IBM Plex Mono',monospace;
-    font-size:15px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+    font-size:15px; font-weight:600; text-transform:uppercase;
     color:#ffffff !important; text-decoration:none; text-align:center;
     padding:16px 20px; border:1px solid var(--line-dark); background:#161310;
   }
-  .mobile-menu a:hover{ color:var(--ink) !important; background:var(--brass); }
-  .mobile-menu .close-x{
-    position:absolute; top:20px; right:20px; width:44px; height:44px;
-    background:transparent; border:1px solid var(--line-dark); color:#ffffff;
-    font-size:22px; cursor:pointer;
-  }
+  .mobile-menu .close-x{position:absolute; top:20px; right:20px; width:44px; height:44px; background:transparent; border:1px solid var(--line-dark); color:#ffffff; font-size:22px;}
 
   @media (max-width: 980px){
     nav.links{display:none;}
     .burger{display:flex;}
     .hero{padding-top:130px;}
-    .hero-grid{grid-template-columns:1fr; gap:50px;}
-    .frame-box img{height:420px;}
-    .about-grid, .skills-grid, .cert-card, .proj-grid, .contact-grid{grid-template-columns:1fr; gap:44px;}
+    .hero-grid, .about-grid, .skills-grid, .cert-card, .proj-grid, .contact-grid{grid-template-columns:1fr; gap:44px;}
     .role-card{grid-template-columns:1fr; gap:16px;}
-  }
-  @media (max-width: 560px){
-    .wrap{padding:0 20px;}
-    section{padding:76px 0;}
-    .hero{padding-top:118px; padding-bottom:60px;}
-    .about-stats{grid-template-columns:1fr 1fr;}
-    .comp-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -465,7 +357,7 @@
       <div class="frame-box">
         <div class="corner tl"></div><div class="corner tr"></div>
         <div class="corner bl"></div><div class="corner br"></div>
-        <img src="images/aleke.jpg" alt="Aleke Chigozie">
+        <img src="digital-agency.webp" alt="Aleke Chigozie">
       </div>
       <div class="frame-tag">Gozy Creative Hub</div>
     </div>
@@ -478,7 +370,7 @@
       <div class="about-photo">
         <div class="corner tl"></div><div class="corner tr"></div>
         <div class="corner bl"></div><div class="corner br"></div>
-        <img src="images/aleke.jpg" alt="Aleke Chigozie">
+        <img src="digital-agency.webp" alt="Aleke Chigozie">
       </div>
       <div class="about-copy">
         <div class="eyebrow">About Me</div>
@@ -583,7 +475,7 @@
       </div>
     </div>
     <div class="cert-card reveal">
-      <img src="assets/webp-3.webp" alt="Youthrive Certificate">
+      <img src="birthday-design.webp" alt="Youthrive Certificate">
       <div class="cert-copy">
         <div class="eyebrow">Verified Completion</div>
         <h3>Youthrive Entrepreneurship Program</h3>
@@ -608,7 +500,7 @@
     </div>
     <div class="proj-grid">
       <div class="proj-card reveal">
-        <div class="proj-media"><img src="assets/webp-4.webp" alt="Agency Promo"></div>
+        <div class="proj-media"><img src="digital-agency.webp" alt="Agency Promo"></div>
         <div class="proj-body">
           <span class="proj-tag">Brand Campaign</span>
           <h3>Gozy Creative Hub — Agency Promo</h3>
@@ -616,7 +508,7 @@
         </div>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-media"><img src="assets/webp-5.webp" alt="Logo Design"></div>
+        <div class="proj-media"><img src="food-design.webp" alt="Logo Design"></div>
         <div class="proj-body">
           <span class="proj-tag">Logo &amp; Identity</span>
           <h3>Gozie Creative Hub — Logo Design</h3>
@@ -624,7 +516,7 @@
         </div>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-media"><img src="assets/jpg-1.jpg" alt="Corper Wee Logo"></div>
+        <div class="proj-media"><img src="birthday-design.webp" alt="Corper Wee Logo"></div>
         <div class="proj-body">
           <span class="proj-tag">Logo &amp; Identity</span>
           <h3>Corper Wee Flowers — Brand Mark</h3>
@@ -632,7 +524,7 @@
         </div>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-media"><img src="assets/webp-6.webp" alt="Services Flyer"></div>
+        <div class="proj-media"><img src="digital-agency.webp" alt="Services Flyer"></div>
         <div class="proj-body">
           <span class="proj-tag">Flyer Design</span>
           <h3>Corper Wee Flowers — Services Flyer</h3>
@@ -685,7 +577,6 @@
     <ul class="foot-links">
       <li><a href="mailto:gozycreative1@gmail.com">Email</a></li>
       <li><a href="https://wa.me/2349162614045" target="_blank">WhatsApp</a></li>
-      <li><a href="assets/pdf-2.pdf" download>Download CV</a></li>
     </ul>
     <span class="foot-note">© 2026 Aleke Chigozie — Gozy Creative Hub</span>
   </div>
@@ -697,31 +588,11 @@
   const mobileMenu = document.getElementById('mobileMenu');
 
   function openMobileMenu(){ mobileMenu.classList.add('open'); document.body.style.overflow = 'hidden'; }
-  function closeMobileMenu(){ mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }
+  function closeMobileMenu(){ mobileMenu.classList.remove('open'); document body.style.overflow = ''; }
 
   burger.addEventListener('click', openMobileMenu);
   closeMenu.addEventListener('click', closeMobileMenu);
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
-
-  if('IntersectionObserver' in window){
-    document.documentElement.classList.add('js-reveal-ready');
-    const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(el => io.observe(el));
-  }
-
-  let lastScroll = 0;
-  const nav = document.querySelector('.site-nav');
-  window.addEventListener('scroll', () => {
-    const current = window.scrollY;
-    if(current > lastScroll && current > 140){ nav.style.transform = 'translateY(-100%)'; } 
-    else { nav.style.transform = 'translateY(0)'; }
-    lastScroll = current;
-  });
 </script>
 
 <script src="https://cdn.botpress.cloud/webchat/v3.7/inject.js"></script>
