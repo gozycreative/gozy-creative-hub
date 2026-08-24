@@ -4,22 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aleke Chigozie — Video Editor &amp; Graphic Designer</title>
-<meta name="description" content="Portfolio of Aleke Chigozie — Artisan, Video Editor and Graphic Designer based in Abuja, Nigeria.">
+<meta name="description" content="Portfolio of Aleke Chigozie — Video Editor and Graphic Designer based in Abuja, Nigeria.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#15120d;
-    --ink-soft:#211c14;
-    --paper:#fbf8f2;
-    --paper-dim:#f1ebdf;
-    --brass:#c08829;
-    --brass-deep:#8c5e1d;
-    --charcoal:#2a2620;
-    --slate:#6e6558;
-    --ember:#c1502e;
-    --line: rgba(192,136,41,0.35);
-    --line-dark: rgba(251,248,242,0.14);
+    --ink:#0f0d0a;
+    --ink-soft:#1a1712;
+    --paper:#ffffff;
+    --paper-dim:#f4f1ea;
+    --brass:#e5a93c;
+    --brass-deep:#b87f1d;
+    --charcoal:#1c1a17;
+    --slate:#5e574d;
+    --line: rgba(229,169,60,0.4);
+    --line-dark: rgba(255,255,255,0.2);
     --max: 1180px;
   }
 
@@ -37,10 +36,6 @@
   a{color:inherit;}
   ::selection{background:var(--brass);color:var(--ink);}
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-  }
-
   .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
 
   h1,h2,h3,h4{
@@ -52,7 +47,7 @@
 
   .eyebrow{
     font-family:'IBM Plex Mono',monospace;
-    font-size:12.5px;
+    font-size:13px;
     letter-spacing:0.16em;
     text-transform:uppercase;
     color:var(--brass);
@@ -60,36 +55,21 @@
     align-items:center;
     gap:10px;
     margin-bottom:18px;
+    font-weight:600;
   }
   .eyebrow::before{
     content:"";
-    width:22px;height:1px;
+    width:22px;height:2px;
     background:var(--brass);
     display:inline-block;
   }
 
-  /* sprocket divider — filmstrip motif, signature element */
-  .sprocket{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-    padding:34px 0;
-  }
-  .sprocket span{
-    width:6px;height:6px;
-    background:var(--brass);
-    opacity:0.55;
-  }
-  .sprocket.dark span{background:var(--paper); opacity:0.35;}
-
   /* ---------- Nav ---------- */
   header.site-nav{
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:rgba(21,18,13,0.88);
+    background:rgba(15,13,10,0.95);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line-dark);
-    transition:transform .4s ease;
   }
   .nav-inner{
     max-width:var(--max); margin:0 auto; padding:16px 32px;
@@ -98,71 +78,57 @@
   .brand{
     font-family:'Fraunces',serif;
     font-weight:700;
-    font-size:19px;
-    color:var(--paper);
+    font-size:20px;
+    color:#ffffff;
     letter-spacing:0.01em;
     display:flex; align-items:center; gap:9px;
+    text-decoration:none;
   }
-  .brand .dot{width:7px;height:7px;background:var(--brass);border-radius:50%;}
+  .brand .dot{width:8px;height:8px;background:var(--brass);border-radius:50%;}
   nav.links{display:flex; gap:34px; list-style:none; margin:0; padding:0;}
   nav.links a{
     font-family:'IBM Plex Mono',monospace;
-    font-size:12.5px;
+    font-size:13px;
     letter-spacing:0.08em;
     text-transform:uppercase;
-    color:var(--paper);
-    opacity:0.72;
+    color:#ffffff;
+    opacity:0.9;
     text-decoration:none;
     position:relative;
     padding-bottom:3px;
     transition:opacity .25s ease;
   }
-  nav.links a:hover{opacity:1;}
-  nav.links a::after{
-    content:"";
-    position:absolute; left:0; bottom:0;
-    width:0; height:1px; background:var(--brass);
-    transition:width .3s ease;
-  }
-  nav.links a:hover::after{width:100%;}
+  nav.links a:hover{opacity:1; color:var(--brass);}
+  
   .nav-cta{
     font-family:'IBM Plex Mono',monospace;
     font-size:12px;
+    font-weight:600;
     letter-spacing:0.06em;
     text-transform:uppercase;
     color:var(--ink);
     background:var(--brass);
-    padding:9px 18px;
+    padding:10px 20px;
     text-decoration:none;
     border:1px solid var(--brass);
-    transition:background .25s ease, color .25s ease;
+    transition:all .25s ease;
   }
-  .nav-cta:hover{background:transparent; color:var(--paper);}
-  .burger{display:none; flex-direction:column; gap:5px; background:transparent; border:1px solid rgba(251,248,242,.25); cursor:pointer; padding:10px; width:46px; height:42px; align-items:center; justify-content:center; border-radius:2px;}
-  .burger span{width:22px; height:2px; background:var(--paper);}
+  .nav-cta:hover{background:transparent; color:var(--brass);}
+  .burger{display:none; flex-direction:column; gap:5px; background:transparent; border:1px solid rgba(255,255,255,.3); cursor:pointer; padding:10px; width:46px; height:42px; align-items:center; justify-content:center; border-radius:2px;}
+  .burger span{width:22px; height:2px; background:#ffffff;}
 
   /* ---------- Hero ---------- */
   .hero{
-    background:
-      radial-gradient(circle at 82% 12%, rgba(192,136,41,0.16), transparent 45%),
-      var(--ink);
-    color:var(--paper);
+    background: radial-gradient(circle at 82% 12%, rgba(229,169,60,0.2), transparent 50%), var(--ink);
+    color:#ffffff;
     padding:168px 0 90px;
     position:relative;
-    overflow:hidden;
-  }
-  .hero::after{
-    content:"";
-    position:absolute; inset:0;
-    background-image:repeating-linear-gradient(90deg, rgba(251,248,242,0.035) 0 1px, transparent 1px 84px);
-    pointer-events:none;
   }
   .hero-grid{
     display:grid;
     grid-template-columns:1.15fr 0.85fr;
     gap:60px;
     align-items:center;
-    position:relative;
   }
   .hero-kicker{
     font-family:'IBM Plex Mono',monospace;
@@ -171,19 +137,16 @@
     text-transform:uppercase;
     color:var(--brass);
     margin-bottom:22px;
-    opacity:0;
-    animation:riseIn .7s ease forwards;
+    font-weight:600;
   }
   .hero h1{
     font-size:clamp(44px, 6.4vw, 84px);
     line-height:0.98;
-    color:var(--paper);
-    opacity:0;
-    animation:riseIn .8s ease .1s forwards;
+    color:#ffffff !important;
   }
   .hero h1 em{
     font-style:normal;
-    color:var(--brass);
+    color:var(--brass) !important;
     display:block;
   }
   .hero-role{
@@ -191,30 +154,25 @@
     font-family:'IBM Plex Mono',monospace;
     font-size:15px;
     letter-spacing:0.02em;
-    color:rgba(251,248,242,0.72);
+    color:#ffffff !important;
     display:flex; flex-wrap:wrap; gap:10px 0;
-    opacity:0;
-    animation:riseIn .8s ease .22s forwards;
   }
   .hero-role .sep{color:var(--brass); margin:0 12px;}
   .hero-desc{
     margin-top:26px;
     max-width:520px;
-    font-size:16.5px;
+    font-size:17px;
     line-height:1.7;
-    color:rgba(251,248,242,0.66);
-    opacity:0;
-    animation:riseIn .8s ease .32s forwards;
+    color:#ffffff !important;
   }
   .hero-actions{
     margin-top:38px;
     display:flex; gap:16px; flex-wrap:wrap;
-    opacity:0;
-    animation:riseIn .8s ease .42s forwards;
   }
   .btn{
     font-family:'IBM Plex Mono',monospace;
-    font-size:12.5px;
+    font-size:13px;
+    font-weight:600;
     letter-spacing:0.08em;
     text-transform:uppercase;
     text-decoration:none;
@@ -225,22 +183,18 @@
   }
   .btn-solid{background:var(--brass); color:var(--ink);}
   .btn-solid:hover{background:transparent; color:var(--brass);}
-  .btn-ghost{color:var(--paper); border-color:var(--line-dark);}
+  .btn-ghost{color:#ffffff; border-color:var(--line-dark);}
   .btn-ghost:hover{border-color:var(--brass); color:var(--brass);}
 
-  .hero-frame{
-    position:relative;
-    opacity:0;
-    animation:riseIn 1s ease .3s forwards;
-  }
+  .hero-frame{ position:relative; }
   .frame-box{
     position:relative;
     border:1px solid var(--line);
     padding:14px;
+    background: rgba(255,255,255,0.02);
   }
   .frame-box img{
-    width:100%; height:560px; object-fit:cover; object-position:top center;
-    filter:grayscale(14%) contrast(1.03);
+    width:100%; height:520px; object-fit:cover; object-position:top center;
   }
   .corner{
     position:absolute; width:22px; height:22px;
@@ -254,9 +208,63 @@
     position:absolute; bottom:-16px; left:20px;
     background:var(--brass); color:var(--ink);
     font-family:'IBM Plex Mono',monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
     padding:8px 14px;
   }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner wrap">
+    <a href="#home" class="brand"><span class="dot"></span>Aleke Chigozie</a>
+    <ul class="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certificate">Certificate</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Let's talk</a>
+    <button class="burger" id="burgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-x" id="closeMenu" aria-label="Close menu">✕</button>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#certificate">Certificate</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-kicker">Based in Abuja, Nigeria</div>
+      <h1>Aleke<em>Chigozie</em></h1>
+      <div class="hero-role">Artisan <span class="sep">/</span> Video Editor <span class="sep">/</span> Graphic Designer</div>
+      <p class="hero-desc">Crafting brand identities and delivering quality craftsmanship for businesses, churches, and individuals.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-solid">Download CV</a>
+        <a href="#projects" class="btn btn-ghost">View Projects</a>
+      </div>
+    </div>
+    <div class="hero-frame">
+      <div class="frame-box">
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
+        <img src="images/aleke.jpg" alt="Aleke Chigozie">
+      </div>
+      <div class="frame-tag">Gozy Creative Hub</div>
+    </div>
+  </div>
+</section>
 
   @keyframes riseIn{
     from{opacity:0; transform:translateY(16px);}
