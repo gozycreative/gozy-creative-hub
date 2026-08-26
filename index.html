@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aleke Chigozie | Visual Storyteller, Video Editor & Tech Specialist</title>
     <style>
-        /* Color Palette - Accessible High-Contrast Navy Blue & Gold */
         :root {
-            --bg-dark: #0a1120;       /* Deep Rich Navy Blue */
-            --bg-card: #152238;       /* Slate Navy for Cards */
-            --bg-nav: rgba(10, 17, 32, 0.95);
-            --accent-gold: #ffb703;   /* Bright Readable Gold */
-            --accent-amber: #fb8500;  /* Secondary Amber Accent */
-            --text-main: #ffffff;     /* Crisp Pure White Text */
-            --text-muted: #cbd5e1;    /* Accessible Light Slate */
-            --border-color: #2a3b5c;  /* Soft Blue Border */
+            --bg-dark: #0a1120;
+            --bg-card: #152238;
+            --bg-nav: rgba(10, 17, 32, 0.98);
+            --accent-gold: #ffb703;
+            --accent-amber: #fb8500;
+            --text-main: #ffffff;
+            --text-muted: #cbd5e1;
+            --border-color: #2a3b5c;
             --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
@@ -39,31 +38,7 @@
             transition: all 0.3s ease;
         }
 
-        /* Dynamic Animations for Hero Section */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes floatImage {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-12px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        /* Fixed Responsive Navbar */
+        /* Fixed Mobile Header Layout */
         header {
             position: fixed;
             top: 0;
@@ -81,14 +56,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.1rem 2rem;
+            padding: 0.8rem 1.2rem;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--text-main);
-            letter-spacing: 0.5px;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -98,30 +73,105 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.2rem;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 4px;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
         }
 
         .nav-links a {
             color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 0.88rem;
         }
 
         .nav-links a:hover {
             color: var(--accent-gold);
         }
 
-        /* Layout Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 6rem 2rem 3rem 2rem;
+            padding: 5.5rem 1.5rem 3rem 1.5rem;
         }
 
-        /* Buttons & CTAs */
+        /* Moving Text Animation */
+        .animated-subtitle {
+            font-size: 1.35rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            min-height: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .typing-text::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+            color: var(--accent-amber);
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2.5rem;
+            padding-top: 1rem;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-tag {
+            background-color: rgba(255, 183, 3, 0.12);
+            color: var(--accent-gold);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 183, 3, 0.3);
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .hero-bio {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.8rem;
+            max-width: 620px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-block;
-            padding: 0.85rem 1.8rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
@@ -138,7 +188,6 @@
         .btn-primary:hover {
             background-color: transparent;
             color: var(--accent-gold);
-            transform: translateY(-2px);
         }
 
         .btn-outline {
@@ -150,109 +199,23 @@
         .btn-outline:hover {
             border-color: var(--accent-gold);
             color: var(--accent-gold);
-            transform: translateY(-2px);
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent-gold);
-            margin-top: 8px;
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            font-size: 1rem;
-        }
-
-        /* Animated Hero Section */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
-            padding-top: 2rem;
-        }
-
-        .hero-content {
-            flex: 1.2;
-            animation: fadeInUp 1s ease-out forwards;
-        }
-
-        .hero-tag {
-            background-color: rgba(255, 183, 3, 0.12);
-            color: var(--accent-gold);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 1.2rem;
-            border: 1px solid rgba(255, 183, 3, 0.3);
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .hero-title {
-            font-size: 3.2rem;
-            line-height: 1.2;
-            margin-bottom: 0.8rem;
-            font-weight: 800;
-            color: var(--text-main);
-            animation: fadeInUp 1.2s ease-out forwards;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--accent-gold);
-            margin-bottom: 1.2rem;
-            font-weight: 600;
-            animation: fadeInUp 1.4s ease-out forwards;
-        }
-
-        .hero-bio {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
-            max-width: 620px;
-            animation: fadeInUp 1.6s ease-out forwards;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            animation: fadeInUp 1.8s ease-out forwards;
         }
 
         .hero-image-container {
             flex: 0.9;
             display: flex;
             justify-content: center;
-            animation: fadeInUp 1.2s ease-out forwards;
         }
 
         .hero-image-frame {
-            width: 330px;
-            height: 410px;
+            width: 310px;
+            height: 390px;
             border-radius: 12px;
             border: 3px solid var(--accent-gold);
-            padding: 8px;
+            padding: 6px;
             background-color: var(--bg-card);
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
             overflow: hidden;
-            animation: floatImage 4s ease-in-out infinite; /* Continuous floating effect */
         }
 
         .hero-image-frame img {
@@ -262,7 +225,29 @@
             border-radius: 8px;
         }
 
-        /* About & Story Grid */
+        .section-title {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.4rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            margin-top: 6px;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* About & Family/Mentorship Image Layout */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -271,7 +256,7 @@
 
         .story-card {
             background-color: var(--bg-card);
-            padding: 2rem;
+            padding: 1.8rem;
             border-radius: 10px;
             border: 1px solid var(--border-color);
             margin-bottom: 1.5rem;
@@ -280,98 +265,29 @@
         .story-card h3 {
             color: var(--accent-gold);
             margin-bottom: 0.75rem;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .story-card p {
             color: var(--text-muted);
-            font-size: 0.98rem;
+            font-size: 0.95rem;
         }
 
-        /* Certificate Section */
-        .cert-section {
-            background-color: var(--bg-card);
-            border-radius: 12px;
-            padding: 2.5rem;
-            border: 1px solid var(--border-color);
-            margin: 4rem 0;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .cert-image-box {
+        .media-card-img {
             width: 100%;
+            height: 220px;
+            object-fit: cover;
             border-radius: 8px;
-            border: 2px solid var(--accent-gold);
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            margin-top: 1rem;
+            border: 1px solid var(--border-color);
         }
 
-        .cert-image-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid var(--border-color);
-            margin-top: 2rem;
-        }
-
-        .timeline-item {
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.45rem;
-            top: 0;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background-color: var(--accent-gold);
-            border: 3px solid var(--bg-dark);
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
-            color: var(--text-main);
-            font-weight: 700;
-        }
-
-        .timeline-company {
-            color: var(--accent-gold);
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .timeline-desc li {
-            margin-left: 1.2rem;
-            margin-bottom: 0.4rem;
-        }
-
-        /* Projects Portfolio Grid */
+        /* Portfolio Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
         }
 
         .project-card {
@@ -383,13 +299,13 @@
         }
 
         .project-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             border-color: var(--accent-gold);
         }
 
         .project-img-box {
             width: 100%;
-            height: 230px;
+            height: 220px;
             background-color: #0b1120;
             overflow: hidden;
         }
@@ -398,69 +314,112 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .project-card:hover .project-img-box img {
-            transform: scale(1.05);
         }
 
         .project-info {
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
 
         .project-info h4 {
             color: var(--text-main);
-            font-size: 1.15rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
         }
 
         .project-info p {
             color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 1.8rem;
+            border-left: 2px solid var(--border-color);
+            margin-top: 1.5rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.25rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-gold);
+            border: 3px solid var(--bg-dark);
+        }
+
+        .timeline-title {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .timeline-company {
+            color: var(--accent-gold);
+            font-weight: 600;
             font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .timeline-desc li {
+            margin-left: 1.1rem;
+            margin-bottom: 0.3rem;
         }
 
         /* Contact Section */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
         }
 
         .contact-info-card {
             background-color: var(--bg-card);
-            padding: 2rem;
+            padding: 1.8rem;
             border-radius: 10px;
             border: 1px solid var(--border-color);
         }
 
         .contact-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .contact-item h5 {
             color: var(--accent-gold);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
         }
 
         .contact-item p {
             color: var(--text-main);
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 0.85rem 1rem;
+            padding: 0.8rem 1rem;
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 6px;
@@ -473,42 +432,44 @@
             border-color: var(--accent-gold);
         }
 
-        /* Footer */
         footer {
             background-color: #060b14;
             border-top: 1px solid var(--border-color);
-            padding: 2.5rem 2rem;
+            padding: 2rem 1.5rem;
             text-align: center;
-            margin-top: 5rem;
+            margin-top: 4rem;
         }
 
         footer p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 900px) {
+        @media (max-width: 850px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 4rem;
+                padding-top: 2rem;
+            }
+
+            .animated-subtitle {
+                justify-content: center;
             }
 
             .hero-bio {
-                margin: 0 auto 2rem auto;
+                margin: 0 auto 1.5rem auto;
             }
 
             .hero-buttons {
                 justify-content: center;
             }
 
-            .about-grid, .cert-grid, .contact-grid {
+            .about-grid, .contact-grid {
                 grid-template-columns: 1fr;
             }
 
             .section-title::after {
-                margin: 8px auto 0 auto;
+                margin: 6px auto 0 auto;
             }
 
             .section-title, .section-subtitle {
@@ -519,13 +480,12 @@
 </head>
 <body>
 
-    <!-- Header & Navigation -->
+    <!-- Responsive Fixed Navigation Header -->
     <header>
         <div class="nav-container">
             <div class="logo">Aleke<span>.Chigozie</span></div>
             <ul class="nav-links">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#credentials">Certificate</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -535,33 +495,39 @@
 
     <main class="container">
 
-        <!-- Animated Hero Section -->
+        <!-- Hero Section with Moving/Animated Headline -->
         <section class="hero" id="hero">
             <div class="hero-content">
                 <span class="hero-tag">Gozie Creative Hub | Abuja, Nigeria</span>
                 <h1 class="hero-title">Aleke Chigozie</h1>
-                <h2 class="hero-subtitle">Artisan | Video Editor | Graphic Designer | AI & Tech Specialist</h2>
+                
+                <!-- Dynamic Typing Text Effect -->
+                <div class="animated-subtitle">
+                    <span>I am a </span>
+                    <span class="typing-text" id="typewriter"></span>
+                </div>
+
                 <p class="hero-bio">
                     Creative and results-oriented professional with practical experience in creating engaging visual content, editing professional videos, and producing high-quality graphic designs for businesses, organizations, churches, and individuals.
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Work With Me</a>
-                    <!-- Direct Link to Download original CV image -->
-                    <a href="123338.png" download="Aleke_Chigozie_CV.png" class="btn btn-outline">Download CV (PNG)</a>
+                    <!-- Direct Link to uploaded CV file -->
+                    <a href="1787779205758.png" download="Aleke_Chigozie_CV.png" class="btn btn-outline">Download CV (PNG)</a>
                 </div>
             </div>
             <div class="hero-image-container">
                 <div class="hero-image-frame">
-                    <!-- Profile Picture Tag -->
-                    <img src="109206.webp" alt="Aleke Chigozie - Professional Photo">
+                    <!-- Website Profile Picture -->
+                    <img src="profile-formal.webp" alt="Aleke Chigozie - Professional Photo">
                 </div>
             </div>
         </section>
 
-        <!-- About Me Section -->
-        <section id="about" style="padding-top: 4rem;">
+        <!-- About Me & Life Journey -->
+        <section id="about" style="padding-top: 3.5rem;">
             <h2 class="section-title">About My Life & Journey</h2>
-            <p class="section-subtitle">200-Word Fact Biography & Personal Background</p>
+            <p class="section-subtitle">Biography, Mentorship & Brand Foundation</p>
 
             <div class="about-grid">
                 <div>
@@ -571,24 +537,30 @@
                             Aleke Chigozie is a creative, results-oriented video editor, graphic designer, and entrepreneur based in Abuja, Nigeria, operating under his brand, Gozie Creative Hub. Driven by a deep passion for visual storytelling and digital strategy, Chigozie transforms complex ideas into compelling brand identities, promotional campaigns, and high-impact visual media.
                         </p>
                     </div>
+
                     <div class="story-card">
                         <h3>Foundation & Mentorship</h3>
                         <p>
-                            His foundational creative journey was inspired by his family—his bedrock of strength, led by his beloved mother ('My Superwoman')—and mentored by Miss Teni ('Queen of Graphics'), who taught him graphic design principles and fueled his passion for visual excellence.
+                            His foundational creative journey was inspired by his family—his bedrock of strength, led by his beloved mother—and mentored by Miss Teni ('Queen of Graphics'), who taught him graphic design principles and fueled his passion for visual excellence.
                         </p>
+                        <!-- Teacher / Mentorship Image -->
+                        <img src="birthday-design.webp" alt="Teacher Miss Teni - Mentorship Design" class="media-card-img">
                     </div>
                 </div>
 
                 <div>
                     <div class="story-card">
-                        <h3>Brand Leadership & Execution</h3>
+                        <h3>Family & Personal Bedrock</h3>
                         <p>
-                            Continuously expanding his professional capabilities, Chigozie completed the Youthrive Entrepreneurship Program in July 2024, solidifying his skills in business execution, leadership, and digital innovation. As a skilled artisan and technical creative, he specializes in video editing, motion graphics, photo editing, and brand identity design.
+                            Grounded in faith, perseverance, and strong personal relationships, Chigozie draws ongoing inspiration from his family background, which fuels his dedication to building long-term value through creative business solutions.
                         </p>
+                        <!-- Family Picture -->
+                        <img src="Family_20260722_135158_0000.png" alt="Aleke Chigozie Family" class="media-card-img">
                     </div>
+
                     <div class="story-card">
                         <h3>Technical Skillset</h3>
-                        <p style="line-height: 2;">
+                        <p style="line-height: 1.8;">
                             <strong style="color: var(--accent-gold);">Software & Tools:</strong> Adobe Photoshop, Adobe Illustrator, Adobe After Effects, CapCut, Canva, Botpress AI, HTML/CSS.
                         </p>
                     </div>
@@ -596,29 +568,10 @@
             </div>
         </section>
 
-        <!-- Entrepreneurial Certificate Section -->
-        <section id="credentials" class="cert-section">
-            <h2 class="section-title">Entrepreneurial Certification</h2>
-            <p class="section-subtitle">Formal Business & Leadership Credentials</p>
-            
-            <div class="cert-grid">
-                <div class="cert-image-box">
-                    <!-- Certificate Image Tag -->
-                    <img src="116616.webp" alt="Youthrive Entrepreneurship Certificate - Chigozie Aleke">
-                </div>
-                <div>
-                    <h3 style="font-size: 1.5rem; color: var(--text-main); margin-bottom: 0.5rem;">Youthrive Entrepreneurship Certificate</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
-                        Issued by <strong>Kleos & Access Bank</strong> on <strong>July 31, 2024</strong>. This certificate confirms the successful completion of intensive entrepreneurship training, strategic business management, and enterprise leadership.
-                    </p>
-                </div>
-            </div>
-        </section>
-
         <!-- Professional Experience Section -->
-        <section id="experience" style="padding-top: 2rem;">
+        <section id="experience" style="padding-top: 3.5rem;">
             <h2 class="section-title">Professional Experience</h2>
-            <p class="section-subtitle">Career History & Work Accomplishments</p>
+            <p class="section-subtitle">Career Accomplishments & Brand Leadership</p>
 
             <div class="timeline">
                 <div class="timeline-item">
@@ -627,7 +580,6 @@
                     <ul class="timeline-desc">
                         <li>Edit professional videos for social media, corporate organizations, churches, events, and promotional campaigns.</li>
                         <li>Apply colour correction, audio enhancement, transitions, subtitles, visual effects, and motion graphics to create engaging content.</li>
-                        <li>Organize and manage raw footage throughout the post-production process.</li>
                         <li>Deliver high-quality video projects within agreed deadlines.</li>
                     </ul>
                 </div>
@@ -639,72 +591,83 @@
                         <li>Design professional flyers, posters, banners, brochures, business cards, logos, and social media graphics.</li>
                         <li>Develop creative concepts that effectively communicate clients' messages and strengthen brand identity.</li>
                         <li>Produce high-quality artwork for both print and digital media.</li>
-                        <li>Revise and improve designs based on client feedback while maintaining professional standards.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="timeline-title">Artisan & Creative Director</h3>
-                    <div class="timeline-company">Gozie Creative Hub</div>
-                    <ul class="timeline-desc">
-                        <li>Deliver quality workmanship while maintaining professional standards and attention to detail.</li>
-                        <li>Interpret project specifications accurately and complete assigned tasks efficiently.</li>
-                        <li>Build positive client relationships through reliability, professionalism, and quality service delivery.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- Projects & Portfolio Section -->
-        <section id="projects" style="padding-top: 4rem;">
+        <section id="projects" style="padding-top: 3.5rem;">
             <h2 class="section-title">Projects & Portfolio</h2>
-            <p class="section-subtitle">Recent Works & Client Branding Projects</p>
+            <p class="section-subtitle">Branding Works, Agency Concepts & Client Designs</p>
 
             <div class="projects-grid">
-                <!-- Project 1 -->
+                <!-- Gozie Creative Hub Logo -->
                 <div class="project-card">
                     <div class="project-img-box">
-                        <img src="109240.webp" alt="Gozie Creative Hub Brand Emblem">
+                        <img src="gozoeCreative Hub_20260728_133905_0000.png" alt="Gozie Creative Hub Brand Logo">
                     </div>
                     <div class="project-info">
-                        <h4>Gozie Creative Hub Logo & Branding</h4>
-                        <p>Brand emblem design featuring hummingbird visual strategy: <em>"Bringing Brands to Life Through Motion and Design Strategy."</em></p>
+                        <h4>Gozie Creative Hub Branding</h4>
+                        <p>Official brand identity design and visual symbol for Gozie Creative Hub.</p>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Digital Agency Brand -->
                 <div class="project-card">
                     <div class="project-img-box">
-                        <img src="116533.png" alt="Corper Wee Flowers Logo Design">
+                        <img src="gozycreative_digital_agency.webp" alt="Gozie Creative Digital Agency">
                     </div>
                     <div class="project-info">
-                        <h4>Corper Wee Flowers Logo Branding</h4>
-                        <p>Complete logo visual identity designed for agricultural seedling and flower business.</p>
+                        <h4>Gozie Creative Digital Agency</h4>
+                        <p>Digital marketing agency visual positioning and branding artwork.</p>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- Corper Wee Flowers Logo Design -->
                 <div class="project-card">
                     <div class="project-img-box">
-                        <img src="116620.webp" alt="Kemi's Dish Promotional Flyer">
+                        <img src="file_0000000032b48243be1e92348b11ab41.png" alt="Corper Wee Flowers Logo Design">
                     </div>
                     <div class="project-info">
-                        <h4>Kemi's Dish Food Flyer</h4>
-                        <p>High-impact digital marketing flyer created for culinary brand campaign.</p>
+                        <h4>Corper Wee Flowers Logo</h4>
+                        <p>Visual brand logo designed for flower and seedling enterprise.</p>
+                    </div>
+                </div>
+
+                <!-- Corper Wee Flower Project Work -->
+                <div class="project-card">
+                    <div class="project-img-box">
+                        <img src="project_floral_design.webp" alt="Corper Wee Floral Design Work">
+                    </div>
+                    <div class="project-info">
+                        <h4>Corper Wee Floral Project</h4>
+                        <p>Custom promotional visual identity designed for agricultural floral business.</p>
+                    </div>
+                </div>
+
+                <!-- Kemi's Dish Food Flyer -->
+                <div class="project-card">
+                    <div class="project-img-box">
+                        <img src="food-design.webp" alt="Kemi's Dish Promotional Design">
+                    </div>
+                    <div class="project-info">
+                        <h4>Kemi's Dish Marketing Flyer</h4>
+                        <p>High-impact digital promotional design created for culinary brand client.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Downloadable CV CTA -->
-        <section style="margin-top: 4rem; background: var(--bg-card); padding: 3rem; border-radius: 10px; border: 1px solid var(--border-color); text-align: center;">
-            <h2 style="color: var(--text-main); margin-bottom: 0.5rem;">Download Complete CV</h2>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Access full resume details including core competencies, language proficiencies, and work history.</p>
-            <a href="123338.png" download="Aleke_Chigozie_CV.png" class="btn btn-primary">Download CV File</a>
+        <!-- Download CV Section -->
+        <section style="margin-top: 4rem; background: var(--bg-card); padding: 2.5rem; border-radius: 10px; border: 1px solid var(--border-color); text-align: center;">
+            <h2 style="color: var(--text-main); margin-bottom: 0.4rem;">Download Full CV</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Access complete details on core competencies, language proficiencies, and professional history.</p>
+            <a href="1787779205758.png" download="Aleke_Chigozie_CV.png" class="btn btn-primary">Download CV Image</a>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" style="padding-top: 4rem;">
+        <!-- Contact & Collaboration Section -->
+        <section id="contact" style="padding-top: 3.5rem;">
             <h2 class="section-title">Contact & Collaboration</h2>
             <p class="section-subtitle">Get In Touch For Projects & Consultations</p>
 
@@ -733,7 +696,7 @@
                         <input type="email" placeholder="Your Email Address" required>
                     </div>
                     <div class="form-group">
-                        <textarea rows="5" placeholder="Project Details or Message..." required></textarea>
+                        <textarea rows="4" placeholder="Project Details or Message..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
@@ -742,10 +705,52 @@
 
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Aleke Chigozie | Gozie Creative Hub. All rights reserved.</p>
     </footer>
+
+    <!-- Text Typing Script for Hero Headline Animation -->
+    <script>
+        const words = ["Artisan", "Video Editor", "Graphic Designer", "AI & Tech Specialist"];
+        let i = 0;
+        let timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typewriter').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000);
+                    return false;
+                }
+                timer = setTimeout(loopTyping, 100);
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typewriter').innerHTML = word.join("");
+                } else {
+                    if (words.length > (i + 1)) {
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+                    setTimeout(typingEffect, 500);
+                    return false;
+                }
+                timer = setTimeout(loopDeleting, 50);
+            };
+            loopDeleting();
+        }
+
+        typingEffect();
+    </script>
 
 </body>
 </html>
