@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleke Chigozie | Visual Storyteller, Video Editor & Tech Creative</title>
+    <title>Aleke Chigozie | Visual Storyteller, Video Editor & Tech Specialist</title>
     <style>
-        /* Modern CSS Variables */
+        /* Color Palette - Accessible High-Contrast Navy Blue & Gold */
         :root {
-            --bg-dark: #0f172a;       /* Deep Navy Blue Background */
-            --bg-card: #1e293b;       /* Lighter Navy/Slate for Cards */
-            --bg-nav: rgba(15, 23, 42, 0.95);
-            --accent-gold: #f59e0b;   /* Vibrant Gold Accent */
-            --accent-amber: #d97706;  /* Secondary Warm Amber */
-            --text-main: #f8fafc;     /* Bright White Text for High Contrast */
-            --text-muted: #cbd5e1;    /* Accessible Light Slate Text */
-            --border-color: #334155;  /* Subtle Card Borders */
+            --bg-dark: #0a1120;       /* Deep Rich Navy Blue */
+            --bg-card: #152238;       /* Slate Navy for Cards */
+            --bg-nav: rgba(10, 17, 32, 0.95);
+            --accent-gold: #ffb703;   /* Bright Readable Gold */
+            --accent-amber: #fb8500;  /* Secondary Amber Accent */
+            --text-main: #ffffff;     /* Crisp Pure White Text */
+            --text-muted: #cbd5e1;    /* Accessible Light Slate */
+            --border-color: #2a3b5c;  /* Soft Blue Border */
             --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -31,26 +30,47 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
             color: var(--accent-gold);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        a:hover {
-            color: #fbbf24;
+        /* Dynamic Animations for Hero Section */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* Responsive Header & Navigation */
+        @keyframes floatImage {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Fixed Responsive Navbar */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             background-color: var(--bg-nav);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
         }
@@ -61,7 +81,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.1rem 2rem;
         }
 
         .logo {
@@ -78,7 +98,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.8rem;
+            gap: 2rem;
         }
 
         .nav-links a {
@@ -91,27 +111,17 @@
             color: var(--accent-gold);
         }
 
-        /* Mobile Menu Button */
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
         /* Layout Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 5rem 2rem 3rem 2rem;
+            padding: 6rem 2rem 3rem 2rem;
         }
 
-        /* Buttons & Call To Action */
+        /* Buttons & CTAs */
         .btn {
             display: inline-block;
-            padding: 0.75rem 1.75rem;
+            padding: 0.85rem 1.8rem;
             border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
@@ -128,6 +138,7 @@
         .btn-primary:hover {
             background-color: transparent;
             color: var(--accent-gold);
+            transform: translateY(-2px);
         }
 
         .btn-outline {
@@ -139,14 +150,14 @@
         .btn-outline:hover {
             border-color: var(--accent-gold);
             color: var(--accent-gold);
+            transform: translateY(-2px);
         }
 
-        /* Section Typography */
+        /* Section Titles */
         .section-title {
             font-size: 2.2rem;
             color: var(--text-main);
             margin-bottom: 0.5rem;
-            position: relative;
         }
 
         .section-title::after {
@@ -165,94 +176,97 @@
             font-size: 1rem;
         }
 
-        /* Hero Section */
+        /* Animated Hero Section */
         .hero {
-            min-height: 90vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 3rem;
-            padding-top: 7rem;
+            padding-top: 2rem;
         }
 
         .hero-content {
-            flex: 1;
+            flex: 1.2;
+            animation: fadeInUp 1s ease-out forwards;
         }
 
         .hero-tag {
-            background-color: rgba(245, 158, 11, 0.1);
+            background-color: rgba(255, 183, 3, 0.12);
             color: var(--accent-gold);
             padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(245, 158, 11, 0.3);
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(255, 183, 3, 0.3);
+            animation: fadeInUp 0.8s ease-out forwards;
         }
 
         .hero-title {
             font-size: 3.2rem;
             line-height: 1.2;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-weight: 800;
+            color: var(--text-main);
+            animation: fadeInUp 1.2s ease-out forwards;
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+            animation: fadeInUp 1.4s ease-out forwards;
         }
 
         .hero-bio {
             color: var(--text-muted);
             font-size: 1.05rem;
             margin-bottom: 2rem;
-            max-width: 600px;
+            max-width: 620px;
+            animation: fadeInUp 1.6s ease-out forwards;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            animation: fadeInUp 1.8s ease-out forwards;
         }
 
         .hero-image-container {
             flex: 0.9;
             display: flex;
             justify-content: center;
+            animation: fadeInUp 1.2s ease-out forwards;
         }
 
         .hero-image-frame {
-            width: 320px;
-            height: 380px;
+            width: 330px;
+            height: 410px;
             border-radius: 12px;
             border: 3px solid var(--accent-gold);
             padding: 8px;
             background-color: var(--bg-card);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            animation: floatImage 4s ease-in-out infinite; /* Continuous floating effect */
         }
 
-        .hero-image-placeholder {
+        .hero-image-frame img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
             border-radius: 8px;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 1rem;
-            border: 1px dashed var(--border-color);
         }
 
-        /* About Section & Story Mapping */
+        /* About & Story Grid */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            align-items: center;
+            gap: 2rem;
         }
 
         .story-card {
@@ -285,41 +299,23 @@
 
         .cert-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 2rem;
+            grid-template-columns: 300px 1fr;
+            gap: 2.5rem;
             align-items: center;
         }
 
-        .cert-badge {
-            background: rgba(245, 158, 11, 0.05);
-            border: 2px dashed var(--accent-gold);
+        .cert-image-box {
+            width: 100%;
             border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
+            border: 2px solid var(--accent-gold);
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
 
-        .cert-badge h4 {
-            color: var(--accent-gold);
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Technical Skills Tags */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .skill-tag {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            font-weight: 500;
+        .cert-image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Experience Timeline */
@@ -348,7 +344,7 @@
         }
 
         .timeline-title {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-main);
             font-weight: 700;
         }
@@ -370,10 +366,10 @@
             margin-bottom: 0.4rem;
         }
 
-        /* Portfolio Projects Grid */
+        /* Projects Portfolio Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -387,22 +383,26 @@
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             border-color: var(--accent-gold);
         }
 
-        .project-img-placeholder {
+        .project-img-box {
             width: 100%;
-            height: 200px;
-            background-color: #334155;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            border-bottom: 1px solid var(--border-color);
+            height: 230px;
+            background-color: #0b1120;
+            overflow: hidden;
+        }
+
+        .project-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-img-box img {
+            transform: scale(1.05);
         }
 
         .project-info {
@@ -418,7 +418,6 @@
         .project-info p {
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 1rem;
         }
 
         /* Contact Section */
@@ -461,7 +460,7 @@
 
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 0.8rem 1rem;
+            padding: 0.85rem 1rem;
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 6px;
@@ -476,7 +475,7 @@
 
         /* Footer */
         footer {
-            background-color: #0b1120;
+            background-color: #060b14;
             border-top: 1px solid var(--border-color);
             padding: 2.5rem 2rem;
             text-align: center;
@@ -488,28 +487,12 @@
             font-size: 0.9rem;
         }
 
-        footer .socials {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        footer .socials a {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        footer .socials a:hover {
-            color: var(--accent-gold);
-        }
-
         /* Responsive Breakpoints */
         @media (max-width: 900px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 6rem;
+                padding-top: 4rem;
             }
 
             .hero-bio {
@@ -532,63 +515,45 @@
                 text-align: center;
             }
         }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Can be toggled with JS */
-            }
-
-            .mobile-toggle {
-                display: block;
-            }
-
-            .hero-title {
-                font-size: 2.4rem;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Responsive Navigation Header -->
+    <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
             <div class="logo">Aleke<span>.Chigozie</span></div>
             <ul class="nav-links">
                 <li><a href="#about">About Me</a></li>
+                <li><a href="#credentials">Certificate</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#credentials">Certifications</a></li>
-                <li><a href="#projects">Projects & Portfolio</a></li>
+                <li><a href="#projects">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="mobile-toggle" aria-label="Toggle Navigation">&#9776;</button>
         </div>
     </header>
 
-    <!-- Main Container -->
     <main class="container">
 
-        <!-- Hero Section -->
+        <!-- Animated Hero Section -->
         <section class="hero" id="hero">
             <div class="hero-content">
-                <span class="hero-tag">Gozie Creative Hub | Abuja, Nigeria[span_0](start_span)[span_0](end_span)</span>
+                <span class="hero-tag">Gozie Creative Hub | Abuja, Nigeria</span>
                 <h1 class="hero-title">Aleke Chigozie</h1>
-                <h2 class="hero-subtitle">Artisan | Video Editor | Graphic Designer | AI & Brand Specialist[span_1](start_span)[span_1](end_span)</h2>
+                <h2 class="hero-subtitle">Artisan | Video Editor | Graphic Designer | AI & Tech Specialist</h2>
                 <p class="hero-bio">
-                    Creative and results-oriented professional with practical experience in creating engaging visual content, editing professional videos, and producing high-quality graphic designs for businesses, churches, and individuals[span_2](start_span)[span_2](end_span).
+                    Creative and results-oriented professional with practical experience in creating engaging visual content, editing professional videos, and producing high-quality graphic designs for businesses, organizations, churches, and individuals.
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Work With Me</a>
-                    <a href="#cv-download" class="btn btn-outline" download>Download CV (PDF)</a>
+                    <!-- Direct Link to Download original CV image -->
+                    <a href="123338.png" download="Aleke_Chigozie_CV.png" class="btn btn-outline">Download CV (PNG)</a>
                 </div>
             </div>
             <div class="hero-image-container">
                 <div class="hero-image-frame">
-                    <div class="hero-image-placeholder">
-                        <p><strong>Profile Photo Asset</strong></p>
-                        <p style="font-size: 0.8rem; color: var(--accent-gold); margin-top: 0.5rem;">Image File: 109206.webp[span_3](start_span)[span_3](end_span)</p>
-                        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Aleke Chigozie holding laptop in modern professional setting[span_4](start_span)[span_4](end_span).</p>
-                    </div>
+                    <!-- Profile Picture Tag -->
+                    <img src="109206.webp" alt="Aleke Chigozie - Professional Photo">
                 </div>
             </div>
         </section>
@@ -596,20 +561,20 @@
         <!-- About Me Section -->
         <section id="about" style="padding-top: 4rem;">
             <h2 class="section-title">About My Life & Journey</h2>
-            <p class="section-subtitle">200-Word Fact Biography & Background</p>
+            <p class="section-subtitle">200-Word Fact Biography & Personal Background</p>
 
             <div class="about-grid">
                 <div>
                     <div class="story-card">
-                        <h3>Professional Profile[span_5](start_span)[span_5](end_span)</h3>
+                        <h3>Professional Profile</h3>
                         <p>
-                            Aleke Chigozie is a creative, results-oriented video editor, graphic designer, and entrepreneur based in Abuja, Nigeria, operating under his brand, Gozie Creative Hub[span_6](start_span)[span_6](end_span). Driven by a deep passion for visual storytelling and digital strategy, Chigozie transforms complex ideas into compelling brand identities, promotional campaigns, and high-impact visual media[span_7](start_span)[span_7](end_span).
+                            Aleke Chigozie is a creative, results-oriented video editor, graphic designer, and entrepreneur based in Abuja, Nigeria, operating under his brand, Gozie Creative Hub. Driven by a deep passion for visual storytelling and digital strategy, Chigozie transforms complex ideas into compelling brand identities, promotional campaigns, and high-impact visual media.
                         </p>
                     </div>
                     <div class="story-card">
                         <h3>Foundation & Mentorship</h3>
                         <p>
-                            His foundational creative journey was inspired by his family—his bedrock of strength, led by his beloved mother ('My Superwoman')—and mentored by Miss Teni ('Queen of Graphics'), who taught him graphic design principles and fueled his passion for visual excellence[span_8](start_span)[span_8](end_span).
+                            His foundational creative journey was inspired by his family—his bedrock of strength, led by his beloved mother ('My Superwoman')—and mentored by Miss Teni ('Queen of Graphics'), who taught him graphic design principles and fueled his passion for visual excellence.
                         </p>
                     </div>
                 </div>
@@ -618,21 +583,14 @@
                     <div class="story-card">
                         <h3>Brand Leadership & Execution</h3>
                         <p>
-                            Continuously expanding his professional capabilities, Chigozie completed the Youthrive Entrepreneurship Program in July 2024, solidifying his skills in business execution, leadership, and digital innovation[span_9](start_span)[span_9](end_span). As a skilled artisan and technical creative, he specializes in video editing, motion graphics, photo editing, and brand identity design[span_10](start_span)[span_10](end_span).
+                            Continuously expanding his professional capabilities, Chigozie completed the Youthrive Entrepreneurship Program in July 2024, solidifying his skills in business execution, leadership, and digital innovation. As a skilled artisan and technical creative, he specializes in video editing, motion graphics, photo editing, and brand identity design.
                         </p>
                     </div>
                     <div class="story-card">
                         <h3>Technical Skillset</h3>
-                        <div class="skills-grid">
-                            <span class="skill-tag">Adobe Photoshop[span_11](start_span)[span_11](end_span)</span>
-                            <span class="skill-tag">Adobe Illustrator[span_12](start_span)[span_12](end_span)</span>
-                            <span class="skill-tag">Adobe After Effects[span_13](start_span)[span_13](end_span)</span>
-                            <span class="skill-tag">CapCut[span_14](start_span)[span_14](end_span)</span>
-                            <span class="skill-tag">Canva[span_15](start_span)[span_15](end_span)</span>
-                            <span class="skill-tag">Motion Graphics[span_16](start_span)[span_16](end_span)</span>
-                            <span class="skill-tag">Visual Storytelling[span_17](start_span)[span_17](end_span)</span>
-                            <span class="skill-tag">AI Technology Integration</span>
-                        </div>
+                        <p style="line-height: 2;">
+                            <strong style="color: var(--accent-gold);">Software & Tools:</strong> Adobe Photoshop, Adobe Illustrator, Adobe After Effects, CapCut, Canva, Botpress AI, HTML/CSS.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -640,18 +598,19 @@
 
         <!-- Entrepreneurial Certificate Section -->
         <section id="credentials" class="cert-section">
+            <h2 class="section-title">Entrepreneurial Certification</h2>
+            <p class="section-subtitle">Formal Business & Leadership Credentials</p>
+            
             <div class="cert-grid">
-                <div class="cert-badge">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 15l-2 5l9-9l-9-9l2 5l-7 4z"/></svg>
-                    <h4>Verified Credential</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Youthrive Entrepreneurship Program[span_18](start_span)[span_18](end_span)</p>
+                <div class="cert-image-box">
+                    <!-- Certificate Image Tag -->
+                    <img src="116616.webp" alt="Youthrive Entrepreneurship Certificate - Chigozie Aleke">
                 </div>
                 <div>
-                    <h3 style="font-size: 1.5rem; color: var(--text-main); margin-bottom: 0.5rem;">Youthrive Entrepreneurship Certification</h3>
+                    <h3 style="font-size: 1.5rem; color: var(--text-main); margin-bottom: 0.5rem;">Youthrive Entrepreneurship Certificate</h3>
                     <p style="color: var(--text-muted); margin-bottom: 1rem;">
-                        Successfully completed the comprehensive Youthrive Entrepreneurship Program organized by Kleos & Access Bank on <strong>July 31, 2024</strong>[span_19](start_span)[span_19](end_span). This certification validates strategic capabilities in business leadership, enterprise execution, and market expansion[span_20](start_span)[span_20](end_span).
+                        Issued by <strong>Kleos & Access Bank</strong> on <strong>July 31, 2024</strong>. This certificate confirms the successful completion of intensive entrepreneurship training, strategic business management, and enterprise leadership.
                     </p>
-                    <p style="font-size: 0.85rem; color: var(--accent-gold);">Linked Asset: Certificate File 116616.webp[span_21](start_span)[span_21](end_span)</p>
                 </div>
             </div>
         </section>
@@ -659,127 +618,114 @@
         <!-- Professional Experience Section -->
         <section id="experience" style="padding-top: 2rem;">
             <h2 class="section-title">Professional Experience</h2>
-            <p class="section-subtitle">Career History & Key Responsibilities[span_22](start_span)[span_22](end_span)</p>
+            <p class="section-subtitle">Career History & Work Accomplishments</p>
 
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3 class="timeline-title">Video Editor[span_23](start_span)[span_23](end_span)</h3>
-                    <div class="timeline-company">Gozie Creative Hub[span_24](start_span)[span_24](end_span)</div>
+                    <h3 class="timeline-title">Video Editor</h3>
+                    <div class="timeline-company">Gozie Creative Hub</div>
                     <ul class="timeline-desc">
-                        <li>Edit professional videos for social media, corporate organizations, churches, events, and promotional campaigns[span_25](start_span)[span_25](end_span).</li>
-                        <li>Apply colour correction, audio enhancement, transitions, subtitles, visual effects, and motion graphics to create engaging content[span_26](start_span)[span_26](end_span).</li>
-                        <li>Organize and manage raw footage throughout the post-production process[span_27](start_span)[span_27](end_span).</li>
-                        <li>Deliver high-quality video projects within agreed deadlines[span_28](start_span)[span_28](end_span).</li>
+                        <li>Edit professional videos for social media, corporate organizations, churches, events, and promotional campaigns.</li>
+                        <li>Apply colour correction, audio enhancement, transitions, subtitles, visual effects, and motion graphics to create engaging content.</li>
+                        <li>Organize and manage raw footage throughout the post-production process.</li>
+                        <li>Deliver high-quality video projects within agreed deadlines.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3 class="timeline-title">Graphic Designer[span_29](start_span)[span_29](end_span)</h3>
-                    <div class="timeline-company">Gozie Creative Hub[span_30](start_span)[span_30](end_span)</div>
+                    <h3 class="timeline-title">Graphic Designer</h3>
+                    <div class="timeline-company">Gozie Creative Hub</div>
                     <ul class="timeline-desc">
-                        <li>Design professional flyers, posters, banners, brochures, business cards, logos, and social media graphics[span_31](start_span)[span_31](end_span).</li>
-                        <li>Develop creative concepts that effectively communicate clients' messages and strengthen brand identity[span_32](start_span)[span_32](end_span).</li>
-                        <li>Produce high-quality artwork for both print and digital media[span_33](start_span)[span_33](end_span).</li>
-                        <li>Revise and improve designs based on client feedback while maintaining professional standards[span_34](start_span)[span_34](end_span).</li>
+                        <li>Design professional flyers, posters, banners, brochures, business cards, logos, and social media graphics.</li>
+                        <li>Develop creative concepts that effectively communicate clients' messages and strengthen brand identity.</li>
+                        <li>Produce high-quality artwork for both print and digital media.</li>
+                        <li>Revise and improve designs based on client feedback while maintaining professional standards.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3 class="timeline-title">Artisan & Creative Director[span_35](start_span)[span_35](end_span)</h3>
-                    <div class="timeline-company">Gozie Creative Hub[span_36](start_span)[span_36](end_span)</div>
+                    <h3 class="timeline-title">Artisan & Creative Director</h3>
+                    <div class="timeline-company">Gozie Creative Hub</div>
                     <ul class="timeline-desc">
-                        <li>Deliver quality workmanship while maintaining professional standards and attention to detail[span_37](start_span)[span_37](end_span).</li>
-                        <li>Interpret project specifications accurately and complete assigned tasks efficiently[span_38](start_span)[span_38](end_span).</li>
-                        <li>Build positive client relationships through reliability, professionalism, and quality service delivery[span_39](start_span)[span_39](end_span).</li>
+                        <li>Deliver quality workmanship while maintaining professional standards and attention to detail.</li>
+                        <li>Interpret project specifications accurately and complete assigned tasks efficiently.</li>
+                        <li>Build positive client relationships through reliability, professionalism, and quality service delivery.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Projects & Client Portfolio Section -->
+        <!-- Projects & Portfolio Section -->
         <section id="projects" style="padding-top: 4rem;">
             <h2 class="section-title">Projects & Portfolio</h2>
-            <p class="section-subtitle">Selected Graphic Design, Video Production & Brand Strategies[span_40](start_span)[span_40](end_span)</p>
+            <p class="section-subtitle">Recent Works & Client Branding Projects</p>
 
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <div class="project-img-placeholder">
-                        <div>
-                            <strong>Gozie Creative Hub Branding</strong>
-                            <p style="font-size: 0.75rem; color: var(--accent-gold); margin-top: 0.3rem;">Asset: 109240.webp[span_41](start_span)[span_41](end_span)</p>
-                        </div>
+                    <div class="project-img-box">
+                        <img src="109240.webp" alt="Gozie Creative Hub Brand Emblem">
                     </div>
                     <div class="project-info">
-                        <h4>Brand Identity & Emblem Strategy</h4>
-                        <p>Complete visual identity build featuring custom hummingbird emblem and brand positioning: <em>"Bringing Brands to Life Through Motion and Design Strategy."</em>[span_42](start_span)[span_42](end_span)</p>
+                        <h4>Gozie Creative Hub Logo & Branding</h4>
+                        <p>Brand emblem design featuring hummingbird visual strategy: <em>"Bringing Brands to Life Through Motion and Design Strategy."</em></p>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <div class="project-img-placeholder">
-                        <div>
-                            <strong>Corper Wee Flowers</strong>
-                            <p style="font-size: 0.75rem; color: var(--accent-gold); margin-top: 0.3rem;">Asset: 116533.png / 116619.webp[span_43](start_span)[span_43](end_span)</p>
-                        </div>
+                    <div class="project-img-box">
+                        <img src="116533.png" alt="Corper Wee Flowers Logo Design">
                     </div>
                     <div class="project-info">
-                        <h4>Gardening & Floral Brand Identity</h4>
-                        <p>Designed client identity, promotional banners, and logo branding for an agricultural and floral enterprise[span_44](start_span)[span_44](end_span).</p>
+                        <h4>Corper Wee Flowers Logo Branding</h4>
+                        <p>Complete logo visual identity designed for agricultural seedling and flower business.</p>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
                 <div class="project-card">
-                    <div class="project-img-placeholder">
-                        <div>
-                            <strong>Kemi's Dish Cuisine Flyer</strong>
-                            <p style="font-size: 0.75rem; color: var(--accent-gold); margin-top: 0.3rem;">Asset: 116620.webp[span_45](start_span)[span_45](end_span)</p>
-                        </div>
+                    <div class="project-img-box">
+                        <img src="116620.webp" alt="Kemi's Dish Promotional Flyer">
                     </div>
                     <div class="project-info">
-                        <h4>Food & Hospitality Graphics</h4>
-                        <p>High-impact promotional media flyer layout designed for print and digital social media marketing campaigns[span_46](start_span)[span_46](end_span).</p>
+                        <h4>Kemi's Dish Food Flyer</h4>
+                        <p>High-impact digital marketing flyer created for culinary brand campaign.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Downloadable CV Callout -->
-        <section id="cv-download" style="margin-top: 4rem; background: var(--bg-card); padding: 3rem; border-radius: 10px; border: 1px solid var(--border-color); text-align: center;">
-            <h2 style="color: var(--text-main); margin-bottom: 0.5rem;">Need Full Resume Details?</h2>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Download the full official CV covering technical expertise, languages (English & Igbo), and professional work history[span_47](start_span)[span_47](end_span).</p>
-            <a href="123338_2.png" download class="btn btn-primary">Download Complete CV</a>
+        <!-- Downloadable CV CTA -->
+        <section style="margin-top: 4rem; background: var(--bg-card); padding: 3rem; border-radius: 10px; border: 1px solid var(--border-color); text-align: center;">
+            <h2 style="color: var(--text-main); margin-bottom: 0.5rem;">Download Complete CV</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Access full resume details including core competencies, language proficiencies, and work history.</p>
+            <a href="123338.png" download="Aleke_Chigozie_CV.png" class="btn btn-primary">Download CV File</a>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" style="padding-top: 4rem;">
             <h2 class="section-title">Contact & Collaboration</h2>
-            <p class="section-subtitle">Get In Touch For Creative Projects & Consultations[span_48](start_span)[span_48](end_span)</p>
+            <p class="section-subtitle">Get In Touch For Projects & Consultations</p>
 
             <div class="contact-grid">
                 <div class="contact-info-card">
                     <div class="contact-item">
-                        <h5>Direct Phone / WhatsApp[span_49](start_span)[span_49](end_span)</h5>
-                        <p>0916 261 4045[span_50](start_span)[span_50](end_span)</p>
+                        <h5>Direct Phone / WhatsApp</h5>
+                        <p>0916 261 4045</p>
                     </div>
                     <div class="contact-item">
-                        <h5>Email Address[span_51](start_span)[span_51](end_span)</h5>
-                        <p>gozycreative1@gmail.com[span_52](start_span)[span_52](end_span)</p>
-                        <p>chigoziealeke123@gmail.com[span_53](start_span)[span_53](end_span)</p>
+                        <h5>Email Address</h5>
+                        <p>gozycreative1@gmail.com</p>
+                        <p>chigoziealeke123@gmail.com</p>
                     </div>
                     <div class="contact-item">
-                        <h5>Location[span_54](start_span)[span_54](end_span)</h5>
-                        <p>Abuja, Nigeria[span_55](start_span)[span_55](end_span)</p>
-                    </div>
-                    <div class="contact-item">
-                        <h5>Languages[span_56](start_span)[span_56](end_span)</h5>
-                        <p>English, Igbo[span_57](start_span)[span_57](end_span)</p>
+                        <h5>Location</h5>
+                        <p>Abuja, Nigeria</p>
                     </div>
                 </div>
 
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your message! Aleke Chigozie will respond shortly.');">
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message submitted successfully!');">
                     <div class="form-group">
                         <input type="text" placeholder="Your Name" required>
                     </div>
@@ -796,16 +742,9 @@
 
     </main>
 
-    <!-- Professional Footer -->
+    <!-- Footer -->
     <footer>
-        <div class="socials">
-            <a href="#">LinkedIn</a>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">WhatsApp[span_58](start_span)[span_58](end_span)</a>
-        </div>
-        <p>&copy; 2026 Aleke Chigozie | Gozie Creative Hub. All rights reserved.[span_59](start_span)[span_59](end_span)</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--accent-gold);">Designed with Accessible Navy & Gold Color Palette</p>
+        <p>&copy; 2026 Aleke Chigozie | Gozie Creative Hub. All rights reserved.</p>
     </footer>
 
 </body>
